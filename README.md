@@ -39,6 +39,6 @@ flutter pub get
     ❏ main.dart
 ```
 
-![postcreen](https://github.com/maulana20/flutter-getx-builder/blob/main/screen/postcreen.jpg)
+![postscreen](https://github.com/maulana20/flutter-getx-builder/blob/main/screen/postscreen.jpg)
 
 ![editscreen](https://github.com/maulana20/flutter-getx-builder/blob/main/screen/editscreen.jpg)
