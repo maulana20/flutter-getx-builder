@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_getx_builder/binding/post_binding.dart';
 import 'package:flutter_getx_builder/binding/post_edit_binding.dart';
 import 'package:flutter_getx_builder/page/post_page.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
                 GetPage(name: '/edit', page: () => PostEditPage(), binding: PostEditBinding(), ),
             ],
             home: PostPage(appTitle: appTitle),
+            builder: EasyLoading.init(),
         );
     }
 }

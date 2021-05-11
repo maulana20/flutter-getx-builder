@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_getx_builder/data/model/post.dart';
 import 'package:flutter_getx_builder/data/repository/post_repository.dart';
 import 'package:flutter_getx_builder/controller/post_controller.dart';
@@ -28,7 +29,14 @@ class PostEditController extends GetxController {
     Future<void> updatePost() async {
         Map<String, String> params = {'id': '${post.id}', 'userId': userId.text, 'title': title.text, 'body': body.text, };
         
+        await EasyLoading.show(
+            status: 'loading...',
+            maskType: EasyLoadingMaskType.black,
+        );
+        
         await _postRepository.updatePost(params);
+        
+        await EasyLoading.dismiss();
         
         Get.dialog(
             AlertDialog(
@@ -37,7 +45,7 @@ class PostEditController extends GetxController {
                 actions: [
                     FlatButton(
                         child: Text("OK"),
-                        onPressed: () => Get.toNamed('/'),
+                        onPressed: () => Get.back(),
                     )
                 ],
             ),
